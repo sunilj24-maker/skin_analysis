@@ -1,0 +1,50 @@
+# ==========================
+# BACKEND & ML (Python)
+# ==========================
+# 1. Virtual Environments (NEVER push these)
+venv/
+env/
+.venv/
+
+# 2. Python Cache (Junk files)
+__pycache__/
+*.pyc
+
+# 3. Machine Learning Data (Crucial!)
+# Ignore folder with your face images
+dataset/
+images/
+raw_data/
+
+# 4. Large Model Weights (files > 100MB crash GitHub)
+*.h5
+*.pt
+*.pth
+*.onnx
+models/
+
+# 5. Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# ==========================
+# FRONTEND (Node/React)
+# ==========================
+# 1. Node Modules (Heavy dependency folder)
+node_modules/
+frontend/node_modules/
+
+# 2. Build outputs
+dist/
+build/
+.next/
+
+# ==========================
+# SECURITY & OS
+# ==========================
+# 1. Environment Variables (Passwords/API Keys)
+.env
+.env.local
+
+# 2. System files
+.DS_Store
+Thumbs.db
