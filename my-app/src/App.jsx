@@ -65,7 +65,7 @@ export default function App() {
               AI
             </div>
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-              DermaScan
+               Routine ready
             </span>
           </div>
           <div className="text-sm font-medium text-slate-500">
