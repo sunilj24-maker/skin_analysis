@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Upload, Camera, Activity, Droplet, AlertTriangle, CheckCircle, ArrowRight, Loader2 } from 'lucide-react';
 import './App.css';
+import { SpeedInsights } from "@vercel/speed-insights/next" ;
 export default function App() {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
