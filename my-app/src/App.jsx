@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Upload, Camera, Activity, Droplet, AlertTriangle, CheckCircle, ArrowRight, Loader2 } from 'lucide-react';
-
+import './App.css';
 export default function App() {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -53,7 +53,41 @@ export default function App() {
       setLoading(false);
     }
   };
+  const [selectedFAQ, setSelectedFAQ] = useState(null);
 
+  // 2. The FAQ Data
+  const faqs = [
+    {
+      question: "Is this tool right for me?",
+      answer: "Yes! Our AI is trained on a diverse range of skin tones and types. Whether you have oily, dry, sensitive, or combination skin, the analysis will provide insights tailored specifically to you."
+    },
+    {
+      question: "How long does it take to use the tool?",
+      answer: "It takes less than 10 seconds. Once you upload your photo, our AI processes the image instantly and generates your personalized report."
+    },
+    {
+      question: "Do you have to download an app to use the tool?",
+      answer: "No download is required. This tool runs entirely in your web browser, so you can analyze your skin directly from your phone or computer."
+    },
+    {
+      question: "Can I save my results?",
+      answer: "Currently, you can take a screenshot of your results. We are working on a feature to let you download a PDF report or email the results to yourself soon."
+    },
+    {
+      question: "Is my picture stored?",
+      answer: "Your privacy is our priority. Your photo is processed temporarily to generate the analysis and is deleted from our servers immediately after the session ends."
+    }
+  ];
+
+  // 3. Function to handle clicking a question
+  const toggleFAQ = (index) => {
+    // If clicking the one already open, close it. Otherwise, open the new one.
+    if (selectedFAQ === index) {
+      setSelectedFAQ(null);
+    } else {
+      setSelectedFAQ(index);
+    }
+  };
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
       
@@ -61,14 +95,14 @@ export default function App() {
       <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">
+            <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white font-bold">
               AI
             </div>
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-600">
                Routine ready
             </span>
           </div>
-          <div className="text-sm font-medium text-slate-500">
+          <div className="text-sm font-medium text-slate-500 ">
             Advanced Skin Analysis
           </div>
         </div>
@@ -120,7 +154,7 @@ export default function App() {
                 </div>
               ) : (
                 <div className="h-96 flex flex-col items-center justify-center text-slate-400">
-                  <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Upload className="w-10 h-10 text-indigo-500" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-700 mb-2">Upload Photo</h3>
@@ -192,7 +226,7 @@ export default function App() {
                     <h2 className="font-bold text-slate-800 flex items-center gap-2">
                       <Activity className="text-indigo-500" size={20} /> Diagnosis
                     </h2>
-                    <span className="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">
+                    <span className="text-xs font-bold px-2 py-1 bg-green-100 text-indigo-700 rounded-full">
                       AI Confidence Level: High
                     </span>
                   </div>
@@ -283,8 +317,9 @@ export default function App() {
                   <div className="bg-yellow-50 p-4 border-t border-yellow-100 flex gap-3">
                     <AlertTriangle className="text-yellow-600 shrink-0" size={20} />
                     <p className="text-xs text-yellow-800 leading-relaxed">
-                      <strong>Safety Note:</strong> Do not start all products at once. Introduce one new product every 2 weeks to monitor for allergies. Consult a dermatologist for persistent issues.
+                      <strong>Safety Note:</strong> Do not start all products at once. Introduce one new product every 2 weeks to monitor for allergies. Consult a dermatologist for persistent issues.There is no responsibility of web owner for any side effect.
                     </p>
+                     
                   </div>
                 </div>
 
@@ -292,7 +327,56 @@ export default function App() {
             )}
           </div>
         </div>
+        <div className = "at_last">
+           
+          <h1 className='bottom'> analysis your skin in more easier way.</h1>
+          <div className='cards_container'>
+            <div className='card'>
+              <p className='card_text'>Take a Selfie. Ensure your face is well-lit and makeup-free for the best results.</p>
+             {/* <img src="/first_picture_women_taking_selfie.webp" alt="Selfie" /> */}
+            </div>
+              
+            <div className='card'>
+              <p className='card_text'> AI Processing. Our  algorithm  and ML models scans for texture, pores, and hydration levels.</p>
+            </div>
+            <div className='card'>
+              <p className='card_text'>Get Your Routine. Receive a personalized product list curated for your specific skin type.</p>
+            </div>
+            {/* <h1 >___________________________________________________________________________</h1> */}
+          </div>
+            
+        </div>
+        <div className='behind_tech'>
+          <h1 className='bottom_head'> Behind the Technology</h1>
+          <p className='tech_para'>Our AI skin -analysis tool leverages advanced machine learning algorithms trained on thousands of dermatological images. By analyzing key features such as texture, pore size, and hydration levels, our system provides accurate skin condition assessments. The personalized skincare routines are curated based on the latest dermatological research, ensuring effective and safe recommendations for all skin types.</p>
+          <h1>______________________________</h1>
+        </div>
+         
+
+         <div className="faq-section">
+        <h2 className="faq-title">FAQS</h2>
+        <p className="faq-subtitle">Click to show the answers to your frequently asked questions</p>
+        
+        <div className="faq-list">
+          {faqs.map((item, index) => (
+            <div key={index} className="faq-item">
+              <div className="faq-question" onClick={() => toggleFAQ(index)}>
+                <h3>{item.question}</h3>
+                <span>{selectedFAQ === index ? '−' : '+'}</span>
+              </div>
+              
+              {/* Only show answer if this index is selected */}
+              <div className={selectedFAQ === index ? "faq-answer show" : "faq-answer"}>
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+        
       </main>
+
     </div>
   );
 }

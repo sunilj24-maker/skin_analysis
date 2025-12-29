@@ -12,10 +12,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #25253200);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #8c999c54);
 }
 
 @keyframes logo-spin {
@@ -39,4 +39,131 @@
 
 .read-the-docs {
   color: #888;
+}
+.at_last {
+  margin-top: 50px;
+  /* margin-top: 50px; */
+  /* font-size: 40px; */
+   color: #232428; 
+  /* font-weight: bold */
+}
+.bottom {
+  font-size: 40px;
+  margin-top: 20px;
+  font-weight: bold;
+   color: black;  
+}
+.cards_container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.card {
+     background-color: #c3acc5b8;
+     border-radius: 20px;
+     padding: 20px;
+     text-align: center;
+     transition: 0.5s ease-in;
+     border: 2px solid #ccc;
+     height: 300px;
+     width: 250px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+.card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+      border: 1px solid #0f0e0d;
+}
+.card_text {
+     color: #050405;
+     font-size: 20px;
+     line-height: 2;
+     font-weight: bold;
+}
+.behind_tech {
+    margin-top: 50px;
+    font-size: 25px;
+    color: #232428;
+}
+.tech_para {
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.bottom_head {
+    font-size: 30px;
+    margin-top: 50px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+/* --- FAQ Section Styles --- */
+
+.faq-section {
+  max-width: 800px;
+  margin: 60px auto; /* Centers the section and adds space above */
+  padding: 0 20px;
+  text-align: left;
+  font-family: sans-serif;
+}
+
+.faq-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.faq-subtitle {
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #0e0d0d; /* The thin grey line between items */
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-question h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  color: #333;
+}
+
+.faq-question:hover h3 {
+  color: #000; /* Darker on hover */
+}
+
+/* The Plus/Minus Icon */
+.faq-question span {
+  font-size: 24px;
+  color: #888;
+  font-weight: lighter;
+}
+
+/* The Answer (Hidden by default) */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* The Answer (Shown) */
+.faq-answer.show {
+  max-height: 100px; /* Big enough to fit text */
+  padding-bottom: 20px;
 }
