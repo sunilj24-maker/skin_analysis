@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Upload, Camera, Activity, Droplet, AlertTriangle, CheckCircle, ArrowRight, Loader2 } from 'lucide-react';
 import './App.css';
-import { SpeedInsights } from "@vercel/speed-insights/next" ;
+
 export default function App() {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -375,9 +376,9 @@ export default function App() {
         </div>
       </div>
 
-        
+      
       </main>
-
+    <Analytics />
     </div>
   );
 }
